@@ -1,4 +1,4 @@
-export default {
+const orderSchema = {
   name: "order",
   type: "document",
   title: "Order",
@@ -85,7 +85,9 @@ export default {
       name: "discount",
       title: "Discount",
       type: "number",
-      validation: (Rule: { min: (arg0: number) => any; }) => Rule.min(0),
+      validation: (Rule: { min: (arg0: number) => any }) => Rule.min(0),
     },
   ],
 };
+
+export default orderSchema;

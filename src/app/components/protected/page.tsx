@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 
-export default function protectroute({
+export default function Protectroute({
   children,
 }: {
   children: React.ReactNode;

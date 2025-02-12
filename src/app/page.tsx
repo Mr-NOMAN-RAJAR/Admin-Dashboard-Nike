@@ -1,10 +1,16 @@
-import Image from "next/image";
-import AdminLogin from "./admin/page";
+"use client";
 
-export default function Home() {
-  return (
-    <>
-      <AdminLogin />
-    </>
-  );
-};
+import { useRouter } from "next/navigation";
+import React, { useEffect } from "react";
+
+export default function ProtectRoute({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const router = useRouter();
+
+  useEffect(() => {}, []);
+
+  return <>{children}</>;
+}
