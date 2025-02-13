@@ -3,14 +3,20 @@
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 
-export default function ProtectRoute({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function HomePage() {
   const router = useRouter();
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    if (!isLoggedIn) {
+      router.push("/admin");
+    }
+  }, [router]);
 
-  return <>{children}</>;
+  return (
+    <div>
+      <h1>Welcome to the Dashboard</h1>
+      <p>This is a protected page.</p>
+    </div>
+  );
 }
