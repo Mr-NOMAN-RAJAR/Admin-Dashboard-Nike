@@ -179,7 +179,7 @@ function AdminDashboard() {
 
   return (
     <div
-      className={`flex flex-col h-screen ${darkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-black"}`}
+      className={`flex flex-col h-screen w-screen ${darkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-black"}`}
     >
       <header
         className={`p-4 shadow-md flex justify-between items-center ${darkMode ? "bg-gray-800 text-white" : "bg-white text-black"} transition duration-500 ease-in-out`}
