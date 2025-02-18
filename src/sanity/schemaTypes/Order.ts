@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from "uuid";
+
 const orderSchema = {
   name: "order",
   type: "document",
@@ -39,7 +41,7 @@ const orderSchema = {
               name: "_key",
               type: "string",
               title: "Unique Key",
-              initialValue: () => Math.random().toString(36).substr(2, 9),
+              initialValue: () => uuidv4(),
               readOnly: true,
             },
             {
@@ -72,7 +74,7 @@ const orderSchema = {
       initialValue: "pending",
     },
     {
-      name: "createdAt",
+      name: "orderDate",
       type: "datetime",
       title: "Order Date",
       options: {
@@ -85,7 +87,7 @@ const orderSchema = {
       name: "discount",
       title: "Discount",
       type: "number",
-      validation: (Rule: { min: (arg0: number) => any }) => Rule.min(0),
+      validation: (Rule: { min: (arg0: number) => any; }) => Rule.min(0),
     },
   ],
 };
